@@ -1,18 +1,20 @@
-require 'open-uri'
+# require 'open-uri'
 require 'rest-client'
 require 'json'
 
-url = ('https://randomuser.me/api/?results=25&inc=name,email,phone,login,picture&nat=us')
+User.destroy_all
+
+url = ('https://randomuser.me/api/?results=25')
 
 response = RestClient.get(url)
 repos = JSON.parse(response)['results']
 
 repos.each do |person|
   file = URI.open('https://thispersondoesnotexist.com/image')
-  new_user = Buddy.create(first_name: person['name']['first'],
+  new_user = User.create!(first_name: person['name']['first'],
                           last_name: person['name']['last'],
-                          address: person['street']['number']['name']),
+                          address: "#{person['location']['street']['number']} #{person['location']['street']['name']}" ,
                           email: person['email'],
-                          password: person['password']
-  new_user.photo.attach(io: file, filename: 'new_user.jpg', content_type: 'image/jpg')
+                          password: '123123')
+  # new_user.photo.attach(io: file, filename: 'new_user.jpg', content_type: 'image/jpg')
 end

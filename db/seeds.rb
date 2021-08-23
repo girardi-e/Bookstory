@@ -1,4 +1,4 @@
-# require 'open-uri'
+require 'open-uri'
 require 'rest-client'
 require 'json'
 

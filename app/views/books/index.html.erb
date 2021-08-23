@@ -1,0 +1,7 @@
+<h1>Your books</h1>
+
+<%= @books.each do |book| %>
+  <ul class="list-group">
+    <li class="list-group-item"><%= book.title %></li>
+  </ul>
+<%= end %>

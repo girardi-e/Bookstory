@@ -1,0 +1,16 @@
+<h1>Check out these amazing books we have selected for you </h1>
+<h3>You will definitely find a story you like</h2>
+
+
+<%= @books.each do |book| %>
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="card">
+        <%# <img src="..." class="card-img-top" alt="..."> %>
+        <div class="card-body">
+          <h5 class="card-title"><%= book.title %></h5>
+          <p class="card-text"><%= book.author %></p>
+        </div>
+      </div>
+    </div>
+<% end %>

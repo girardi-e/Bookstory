@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :books
-
-  resources :orders, only: [:show, :create]
+  resources :books do
+    resources :orders, only: [:show, :create]
+  end
 
 end

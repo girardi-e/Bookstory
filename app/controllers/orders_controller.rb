@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
-
   def create
     @order = Order.new
     @book = Book.find(params[:book_id])
@@ -11,11 +10,9 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.date = Time.now
     if @order.save
-        redirect_to book_order_path(@book, @order)
+      redirect_to order_path(@order)
     else
-        redirect_to book_path(@book)
+      redirect_to book_path(@book)
     end
-
   end
-
 end

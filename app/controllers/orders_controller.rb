@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.date = Time.now
     if @order.save
-        redirect_to book_order_path(@order, @book)
+        redirect_to book_order_path(@book, @order)
     else
         redirect_to book_path(@book)
     end

@@ -2,10 +2,8 @@
 
 <%= @book.title %>
 <%= link_to "EDIT", edit_book_path(@book) %>
-<%= link_to "Delete #{@book.title}",
+<%= link_to "DELETE",
             book_path(@book),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
 <%= link_to "Buy this Book", book_orders_path(@book), method: :post  %>
-
-

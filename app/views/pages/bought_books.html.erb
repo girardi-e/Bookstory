@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col mx-4">
+  <div class="row justify-content-center">
+    <div class="col-10 mx-4">
       <h1 class="my-3"><%="Hello, #{@user.first_name}. " %></h1>
       <h3 class="my-3">Check out the books you've bought</h3>
 
@@ -16,7 +16,7 @@
         <% @new_array.each do |order| %>
           <tbody>
             <tr>
-              <td><%= order.book.title %></td>
+              <td><%= link_to "#{order.book.title}", book_path(order.book) %></td>
               <td><%= order.book.author %></td>
               <td><%= "R$#{order.book.price}" %></td>
             </tr>

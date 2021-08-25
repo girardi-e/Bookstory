@@ -1,24 +1,29 @@
 <div class="container">
-  <h1 class="my-3"><%="Hello, #{@user.first_name}. " %></h1>
-  <h3 class="my-3">These are all your books</h3>
+  <div class="row">
+    <div class="col mx-4">
+      <h1 class="my-3"><%="Hello, #{@user.first_name}. " %></h1>
+      <h3 class="my-3">Check out your books</h3>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Price</th>
-      </tr>
-    </thead>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
 
-  <% @books.each do |book| %>
-    <tbody>
-      <tr>
-        <td><%= link_to "#{book.title}", book_path(book) %></td>
-        <td><%= book.author %></td>
-        <td><%= "R$#{book.price}" %></td>
-      </tr>
-    </tbody>
-  <% end %>
-  </table>
+        <% @books.each do |book| %>
+          <tbody>
+            <tr>
+              <td><%= link_to "#{book.title}", book_path(book) %></td>
+              <td><%= book.author %></td>
+              <td><%= "R$#{book.price}" %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+      <%= link_to 'Go back', root_path, class:'btn btn-secondary mt-3' %>
+    </div>
+  </div>
 </div>

@@ -1,2 +1,18 @@
-<h1>Bookstories</h1>
-<p>Find the perfect story for you</p>
+<section>
+  <header>
+    <div class="toggle" onclick="toggleMenu();"></div>
+  </header>
+  
+  <div class="content">
+    <h2>Book<br>Story</h2>
+    <br><br><br>
+      <h4> Find a perfect story for you </h4>
+  </div>
+   <%= if user_signed_in? 
+        link_to "Find a new Story", books_path, class:"found button text-decoration-none"
+       else
+        link_to "Find a new Story", new_user_session_path, class:"found button text-decoration-none"
+       end 
+    %>
+
+  

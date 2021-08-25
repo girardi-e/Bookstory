@@ -1,15 +1,24 @@
 <div class="container">
-  <h1><%="Hello, #{@user.first_name}. " %></h1>
-  <h3>Here you can find all your books</h3>
+  <h1 class="my-3"><%="Hello, #{@user.first_name}. " %></h1>
+  <h3 class="my-3">These are all your books</h3>
 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
 
   <% @books.each do |book| %>
-    <div class="card" style="width: 9rem;">
-      <img class="card-img-top" src="" alt="Book cover">
-      <div class="card-body text-center">
-        <p class="card-text"><%= link_to 'more', book_path(book) %></p>
-      </div>
-    </div>
+    <tbody>
+      <tr>
+        <td><%= link_to "#{book.title}", book_path(book) %></td>
+        <td><%= book.author %></td>
+        <td><%= "R$#{book.price}" %></td>
+      </tr>
+    </tbody>
   <% end %>
-
+  </table>
 </div>

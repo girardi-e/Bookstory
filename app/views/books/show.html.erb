@@ -1,10 +1,16 @@
-<h1> SHOW BOOKS </h1>
 
-<%= cl_image_tag ('Dune_book_cover', width: 400, height: 300, crop: :fill) %>
-<%= @book.title %>
-<%= link_to "EDIT", edit_book_path(@book) %>
-<%= link_to "DELETE",
-            book_path(@book),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-<%= link_to "Buy this Book", book_orders_path(@book), method: :post  %>
+
+<div class="container">
+  <%= image_tag @book.photo %>
+  <div class="info">
+    <h1 class="pb-20"><%= @book.title %></h1>
+    <p class="pb-20"><%= @book.description %></p>
+    <div class="order-ad">
+      <h4>Peça agora e receba em até 3 dias</h4>
+      <i class="fas fa-truck"></i>
+    </div>
+    <h3>R$<%= @book.price %></h3>
+    <%= link_to "Buy this Book", book_orders_path(@book), method: :post, class: "btn btn-primary pt-80"  %>
+  </div>
+</div>
+

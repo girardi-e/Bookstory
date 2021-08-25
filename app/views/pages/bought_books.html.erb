@@ -1,3 +1,29 @@
-<% @new_array.each do |order| %>
-  <%= order.book.title %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 mx-4">
+      <h1 class="my-3"><%="Hello, #{@user.first_name}. " %></h1>
+      <h3 class="my-3">Check out the books you've bought</h3>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+
+        <% @new_array.each do |order| %>
+          <tbody>
+            <tr>
+              <td><%= link_to "#{order.book.title}", book_path(order.book) %></td>
+              <td><%= order.book.author %></td>
+              <td><%= "R$#{order.book.price}" %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+      <%= link_to 'Go back', root_path, class:'btn btn-secondary mt-3' %>
+    </div>
+  </div>
+</div>

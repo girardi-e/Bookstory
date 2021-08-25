@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def bought_books
+    @user = current_user
     @orders = Order.all
     @new_array = @orders.select do |order|
       order.user == current_user

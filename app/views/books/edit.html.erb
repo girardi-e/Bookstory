@@ -13,6 +13,8 @@
 
           <%= f.submit "Update book", class: "btn btn-primary" %>
         <% end %>
+        <%= link_to "Delete", book_path(@book), method: :delete,
+                    data: { confirm: "Are you sure?" } %>
     </div>
   </div>
 </div>

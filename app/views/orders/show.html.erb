@@ -1,4 +1,13 @@
 <h1> show order </h1>
 
-<%= @order.book.title %>
-<br><%= @order.book.price %>
+<div class="container">
+  <%= image_tag @order.book.photo %>
+  <div class="info">
+    <h1 class="pb-20"><%= @order.book.title %> purchased successfully </h1>
+    <div class="order-ad">
+      <h4>You will receive your product soon</h4>
+    </div>
+    <h3>R$<%= @order.book.price %></h3>
+    <%= link_to "My orders", bought_books_path, class: "btn btn-primary pt-80" %>
+  </div>
+</div>

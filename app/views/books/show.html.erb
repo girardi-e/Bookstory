@@ -1,15 +1,28 @@
+<div class="container my-5">
+  <div class="row">
 
-
-<div class="container">
-  <%= image_tag @book.photo %>
-  <div class="info">
-    <h1 class="pb-20"><%= @book.title %></h1>
-    <p class="pb-20"><%= @book.description %></p>
-    <div class="order-ad">
-      <h4>Peça agora e receba em até 3 dias</h4>
-      <i class="fas fa-truck"></i>
+    <div class="col d-flex justify-content-center">
+      <%= cl_image_tag @book.photo.key, height: 300, width: 400%>
     </div>
-    <h3>R$<%= @book.price %></h3>
-    <%= link_to "Buy this Book", book_orders_path(@book), method: :post, class: "btn btn-primary pt-80"  %>
+
+    <div class="col">
+      <div class="formbg-outer">
+        <h1 class="text-center mb-3">Book details</h1>
+        <div class="formbg">
+          <div class="formbg-inner padding-horizontal--48">
+            <div class="info">
+              <h1 class="pb-20"><%= @book.title %></h1>
+              <p class="pb-20"><%= @book.description %></p>
+              <div class="order-ad">
+                <h4>Peça agora e receba em até 3 dias</h4>
+                <i class="fas fa-truck"></i>
+              </div>
+              <h3>R$<%= @book.price %></h3>
+              <%= link_to "Buy this Book", book_orders_path(@book), method: :post, class: "btn btn-primary pt-80"  %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,21 +1,20 @@
-<h1>Check out these amazing books</h1>
-<h3>You will definitely find a story you like</h2>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544716278-e513176f20b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);">
+  <div class="banner-container">
+    <h1>Check out these amazing books</h1>
+    <h3>You will definitely find a story you like</h2>
+  </div>
+</div>
 
 <div class="container">
   <div class="cards">
     <% @books.each do |book| %>
-    <div class="card">
-      <div class="card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images-na.ssl-images-amazon.com/images/I/41CntX16eWL._SX332_BO1,204,203,200_.jpg')">
-      </div>
-      <div class="title">
-        <h4><%= book.title %></h4>
-      </div>
-      <div class="price-more">
-        <p>R$<%= book.price %></p>
-        <p><%= link_to "More", book_path(book), class:"text-primary" %></p>
-      </div>
-    </div>
-
+        <div class="accessory__content">
+          <img src="assets/top3.jfif" alt="" class="accessory__img">
+          <h3 class="accessory__title"><%= book.title %></h3>
+          <span class="accessory__category"><%= book.author %></span>
+           <span class="accessory__preci">R$<%= book.price %></span>
+            <a href="#" class="button accessory__button"><i class='bx bx-book-open'></i></a>
+         </div>
     <% end %>
   </div>
 </div>

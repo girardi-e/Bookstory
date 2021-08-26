@@ -127,7 +127,7 @@ img {
   background-color: var(--body-color);
 }
 
-/*========== Buy ==========*/
+
 .home {
   &__container {
     row-gap: 0.5rem;
@@ -234,6 +234,7 @@ img {
     background-color: var(--container-color);
     box-shadow: 0 2px 6px rgba(65, 11, 16, 0.15);
     border-radius: 1rem;
+    margin-right: 20px;
 
     &:hover {
       box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);

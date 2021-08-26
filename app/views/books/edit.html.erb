@@ -3,7 +3,11 @@
   <div class="row">
 
     <div class="col d-flex justify-content-center">
-      <%= cl_image_tag @book.photo.key, height: 300, width: 400%>
+      <% if @book.photo.attached? %>
+        <%= cl_image_tag @book.photo.key, height: 300, width: 400%>
+      <% else %>
+        <%= cl_image_tag "https://res.cloudinary.com/e-girardi/image/upload/v1629916606/Book_covers/blank_book_jrgpwl.jpg", height: 300, width: 400%>
+      <% end  %>
     </div>
 
     <div class="col">

@@ -1,20 +1,34 @@
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-10 ">
-      <h1> UPDATE MY BOOK</h1>
+<div class="container my-5">
+  <div class="row">
 
-        <%= simple_form_for [ @book ] do |f| %>
-          <%= f.input :title %>
-          <%= f.input :author %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-          <%= f.input :photo, as: :file %>
+    <div class="col d-flex justify-content-center">
+      <%= cl_image_tag @book.photo.key, height: 300, width: 400%>
+    </div>
 
-          <%= f.submit "Update book", class: "btn btn-primary" %>
-        <% end %>
-        <%= link_to "Delete", book_path(@book), method: :delete,
-                    data: { confirm: "Are you sure?" } %>
+    <div class="col">
+      <div class="formbg-outer">
+        <h1 class="text-center mb-3">Edit your book</h1>
+        <div class="formbg">
+          <div class="formbg-inner padding-horizontal--48">
+
+            <%= simple_form_for [ @book ], id: "stripe-login" do |f| %>
+              <div class="field padding-bottom--12">
+                <%= f.input :title %>
+                <%= f.input :author %>
+                <%= f.input :description %>
+                <%= f.input :price %>
+                <%= f.input :photo, as: :file %>
+              </div>
+              <div class="buttons-containter d-flex justify-content-around mt-5">
+                <%= f.submit "Update book", class: "btn btn-primary" %>
+                <%= link_to "Delete book", book_path(@book), method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

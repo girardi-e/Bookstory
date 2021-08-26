@@ -14,6 +14,7 @@
   --text-color-light: #8f8a8a;
   --body-color: #fefbfb;
   --container-color: #fff;
+  --nav-footer-color: indianred;
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -36,7 +37,7 @@
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  /*========== Margenes ==========*/
+  /*========== Margins ==========*/
   --mb-1: 0.5rem;
   --mb-2: 1rem;
   --mb-3: 1.5rem;
@@ -50,6 +51,7 @@
 }
 
 /*========== BASE ==========*/
+
 *,
 ::before,
 ::after {
@@ -60,34 +62,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-  --first-color-send: #161212;
-  --title-color: #f3f1f1;
-  --text-color: #d1c7c8;
-  --body-color: #251d1e;
-  --container-color: #302728;
-}
-
-/*========== Button Dark/Light ==========*/
-.change-theme {
-  position: absolute;
-  right: 1.5rem;
-  top: 2.2rem;
-  display: flex;
-  color: var(--title-color);
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
 h1,
 h2,
 h3,
@@ -153,114 +127,7 @@ img {
   background-color: var(--body-color);
 }
 
-/*========== NAV ==========*/
-.nav {
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  &__menu {
-    @media screen and (max-width: 768px) {
-      position: fixed;
-      top: -100%;
-      left: 0;
-      right: 0;
-      width: 90%;
-      margin: 0 auto;
-      padding: 2.5rem 0 0;
-      text-align: center;
-      background-color: var(--body-color);
-      transition: 0.4s;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-      border-radius: 2rem;
-      z-index: var(--z-fixed);
-    }
-  }
-  &__item {
-    margin-bottom: var(--mb-3);
-  }
-  &__link,
-  &__logo,
-  &__toggle {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-  }
-  &__logo {
-    &:hover {
-      color: var(--first-color);
-    }
-  }
-  &__link {
-    transition: 0.3s;
-
-    &:hover {
-      color: var(--first-color);
-    }
-  }
-  &__toggle {
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
-}
-
-/* Show menu */
-.show-menu {
-  top: calc(var(--header-height) + 1rem);
-}
-
-/* Active menu link */
-.active-link {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: -0.75rem;
-    left: 45%;
-    width: 5px;
-    height: 5px;
-    background-color: var(--title-color);
-    border-radius: 50%;
-  }
-}
-
-/* Change background header */
-.scroll-header {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Scroll top */
-.scrolltop {
-  position: fixed;
-  right: 1rem;
-  bottom: -20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.3rem;
-  background: rgba(218, 37, 53, 0.5);
-  border-radius: 0.4rem;
-  z-index: var(--z-tooltip);
-  transition: 0.4s;
-  visibility: hidden;
-
-  &:hover {
-    background-color: var(--container-color);
-  }
-
-  &__icon {
-    font-size: 1.5rem;
-    color: var(--body-color);
-  }
-}
-
-.show-scroll {
-  visibility: visible;
-  bottom: 1.5rem;
-}
-
-/*========== HOME ==========*/
 .home {
   &__container {
     row-gap: 0.5rem;
@@ -284,13 +151,16 @@ img {
   display: inline-block;
   background-color: var(--first-color);
   color: #fff;
-  padding: 1rem 1.5rem;
+  padding: 1rem 3rem;
   border-radius: 0.5rem;
   font-weight: var(--font-semi-bold);
   transition: 0.3s;
+  opacity: 0.8;
 
   &:hover {
-    background-color: var(--container-color);
+    //background-color: var(--container-color);
+    opacity: 1;
+    color: #fff;
   }
 
   &-link {
@@ -304,8 +174,14 @@ img {
     }
   }
 }
+.button-suggestion {
+  position: absolute;
+  bottom: 5px;
+  right: 105px;
+  margin: 10px;
+}
 
-/*========== SHARE ==========*/
+/*========== Sell ==========*/
 .share {
   &__data {
     text-align: center;
@@ -319,7 +195,7 @@ img {
   }
 }
 
-/*========== DECORATION ==========*/
+/*========== Our Suggestion ==========*/
 .decoration {
   &__container {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -330,6 +206,7 @@ img {
     background-color: var(--container-color);
     box-shadow: 0 2px 6px rgba(65, 11, 16, 0.15);
     border-radius: 1rem;
+    position: relative;
 
     &:hover {
       box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
@@ -344,7 +221,7 @@ img {
   }
 }
 
-/*========== ACCESSORIES ==========*/
+/*========== New Books ==========*/
 .accessory {
   &__container {
     grid-template-columns: repeat(2, 1fr);
@@ -394,50 +271,13 @@ img {
     border-radius: 1rem 0 1rem 0;
   }
 }
-
-/*========== SEND GIFT ==========*/
-.send {
-  background-color: var(--first-color-send);
-
-  &__title,
-  &__description {
-    color: #fff;
-  }
-  &__description {
-    text-align: center;
-    margin-bottom: var(--mb-4);
-  }
-  &__direction {
-    display: flex;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-  }
-  &__input {
-    width: 70%;
-    outline: none;
-    border: none;
-    font-size: var(--normal-font-size);
-    font-family: var(--body-font);
-
-    &::placeholder {
-      font-family: var(--body-font);
-    }
-  }
-  &__img {
-    width: 280px;
-    justify-self: center;
-  }
-}
-
 /*========== FOOTER ==========*/
 .footer {
   &__container {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
   &__logo {
-    color: var(--title-color);
+    color: var(--body-color);
   }
   &__title {
     margin-bottom: var(--mb-2);
@@ -574,16 +414,6 @@ img {
       padding: 0.75rem;
     }
   }
-
-  .send {
-    background: none;
-
-    &__container {
-      background-color: var(--first-color-send);
-      padding: 2rem;
-      border-radius: 1.5rem;
-    }
-  }
 }
 
 @media screen and (min-width: 968px) {
@@ -593,14 +423,12 @@ img {
   }
 
   .home__img,
-  .share__img,
-  .send__img {
+  .share__img {
     width: 469px;
   }
 
   .home__container,
-  .share__container,
-  .send__container {
+  .share__container {
     column-gap: 5rem;
   }
 }

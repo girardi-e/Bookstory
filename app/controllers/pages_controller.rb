@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @books = Book.all.first(6)
+    @books_rand = Book.all.sample(3)
   end
 
   def profile

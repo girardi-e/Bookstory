@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544716278-e513176f20b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);">
   <div class="banner-container">
-    <h1>Check out these amazing books</h1>
+    <h1 class="mb-5">Check out these amazing books</h1>
     <h3>You will definitely find a story you like</h2>
   </div>
 </div>
@@ -9,7 +9,7 @@
   <div class="cards">
     <% @books.each do |book| %>
         <div class="accessory__content">
-          <% if book.photo  .attached? %>
+          <% if book.photo.attached? %>
             <%= cl_image_tag book.photo.key, class: "accessory__img"%>
           <% else %>
             <%= cl_image_tag "https://res.cloudinary.com/e-girardi/image/upload/v1629916606/Book_covers/blank_book_jrgpwl.jpg", class: "accessory__img"%>

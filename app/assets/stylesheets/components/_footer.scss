@@ -1,0 +1,48 @@
+.footer {
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    background-color: indianred;
+    padding: 30px;
+  }
+  &__logo {
+    color: var(--container-color);
+  }
+  &__title {
+    margin-bottom: var(--mb-2);
+  }
+  &__logo,
+  &__title {
+    font-size: var(--h3-font-size);
+    color: var(--container-color);
+  }
+  &__link {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: var(--container-color);
+
+    &:hover {
+      color: var(--container-color);
+    }
+  }
+  &__social {
+    font-size: 1.5rem;
+    color: var(--container-color);
+    margin-right: var(--mb-3);
+
+    &:hover {
+      color: var(--container-color);
+    }
+  }
+  &__copy {
+    text-align: center;
+    font-size: var(--small-font-size);
+    color: var(--container-color);
+    margin-top: 4rem;
+  }
+}
+
+.footer-container {
+  background-color: indianred;
+  height: 100px;
+}

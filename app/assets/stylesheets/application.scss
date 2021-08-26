@@ -16,5 +16,8 @@
 @import "books/show";
 
 body {
-  background-color: #F8F8FF;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: #f8f8ff;
+  line-height: 1.6;
 }

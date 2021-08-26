@@ -33,10 +33,14 @@
     <h2 class="section-title">Our Suggestions</h2>
     <div class="decoration__container bd-grid">
         <% @books_rand.each do |book| %>
-            <div class="decoration__data">
-                <img src="assets/top1.jpg" alt="" class="decoration__img">
-                <h3 class="decoration__title"><%= book.title %></h3>
-                <%= link_to "Go Shopping", book_path(book), class: "button button-link button-suggestion" %>
+            <div class="decoration__data text-center d-flex flex-column">
+                <div>
+                    <img src="assets/top1.jpg" alt="" class="decoration__img">
+                    <h3 class="decoration__title"><%= book.title %></h3>
+                </div>
+                <div class ="mt-auto">
+                    <%= link_to "Go Shopping", book_path(book), class: "button button-link button-suggestion" %>
+                </div>
             </div>
         <% end %>
     </div>
@@ -61,7 +65,5 @@
     </div> 
 </section>
 
-<!--========== FOOTER ==========-->
-
+<!--========== Footer ==========-->
 <%= render 'shared/footer' %>
-

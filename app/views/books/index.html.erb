@@ -9,11 +9,17 @@
   <div class="cards">
     <% @books.each do |book| %>
         <div class="accessory__content">
-          <img src="assets/top3.jfif" alt="" class="accessory__img">
+          <% if book.photo  .attached? %>
+            <%= cl_image_tag book.photo.key, class: "accessory__img"%>
+          <% else %>
+            <%= cl_image_tag "https://res.cloudinary.com/e-girardi/image/upload/v1629916606/Book_covers/blank_book_jrgpwl.jpg", class: "accessory__img"%>
+          <% end  %>
           <h3 class="accessory__title"><%= book.title %></h3>
           <span class="accessory__category"><%= book.author %></span>
            <span class="accessory__preci">R$<%= book.price %></span>
-            <a href="#" class="button accessory__button"><i class='bx bx-book-open'></i></a>
+            <%= link_to book_path(book), class:"button accessory__button" do %>
+              <i class='bx bx-cart-alt' style='color:#ffffff' ></i>
+            <% end %>
          </div>
     <% end %>
   </div>

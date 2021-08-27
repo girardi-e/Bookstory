@@ -127,6 +127,7 @@ img {
   background-color: var(--body-color);
 }
 
+/*========== BUTTONS ==========*/
 .home {
   &__container {
     row-gap: 0.5rem;
@@ -356,7 +357,7 @@ img {
 
   .accessory {
     &__container {
-      grid-template-columns: repeat(3, 224px);
+      grid-template-columns: repeat(6, 224px);
       justify-content: center;
     }
     &__content {

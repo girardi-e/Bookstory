@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to books_path, class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
 
     <%= image_tag "https://img.icons8.com/color/48/000000/storytelling.png" %>
     <a href="https://icons8.com/icon/jfFu3i8zJXfN/storytelling"></a>
@@ -13,6 +13,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Store", books_path, class: "nav-link" %>
+        </li>
         <li class="nav-item active">
           <%= link_to "My books", profile_path, class: "nav-link" %>
         </li>

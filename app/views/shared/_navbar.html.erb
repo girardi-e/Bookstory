@@ -1,8 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to books_path, class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
 
-    <%= image_tag "https://img.icons8.com/color/48/000000/storytelling.png" %>
-    <a href="https://icons8.com/icon/jfFu3i8zJXfN/storytelling"></a>
+    <%= image_tag "/assets/Logo4.png" %>
+    <a href="/assets/Logo4.png"></a>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,6 +13,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Store", books_path, class: "nav-link" %>
+        </li>
         <li class="nav-item active">
           <%= link_to "My books", profile_path, class: "nav-link" %>
         </li>
@@ -23,7 +26,7 @@
           <%= link_to "Sell a book", new_book_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://avatars.githubusercontent.com/u/85773731?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

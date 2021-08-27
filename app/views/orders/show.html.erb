@@ -1,13 +1,35 @@
-<h1> show order </h1>
 
-<div class="container">
-  <%# <%= image_tag @order.book.photo %>
-  <div class="info">
-    <h1 class="pb-20"><%= @order.book.title %> purchased successfully </h1>
-    <div class="order-ad">
-      <h4>You will receive your product soon</h4>
+<div class="container my-5">
+  <div class="row d-flex align-items-center">
+
+    <div class="col d-flex justify-content-center">
+      <% if @order.book.photo.attached? %>
+        <%= cl_image_tag @order.book.photo.key, height: 300, width: 400%>
+      <% else %>
+        <%= cl_image_tag "https://res.cloudinary.com/e-girardi/image/upload/v1629916606/Book_covers/blank_book_jrgpwl.jpg", height: 300, width: 400%>
+      <% end  %>
     </div>
-    <h3>R$<%= @order.book.price %></h3>
-    <%= link_to "My orders", bought_books_path, class: "btn btn-primary pt-80" %>
+
+    <div class="col">
+      <div class="formbg-outer">
+        <div class="formbg">
+          <div class="formbg-inner padding-horizontal--48">
+            <div class="info text-right">
+              <h1 class="pb-20 my-2"><%= @order.book.title %></h1>
+              <p class="mb-5"><em>Being sold by </em><strong><%="#{@order.user.first_name}"%></strong></p>
+              <p class="pb-20 my-3">"<%= @order.book.description %>"</p>
+              <%# <i class="fas fa-truck"></i> %>
+              <div class="order-ad">
+                <h4>Order it now and receive it in up to 3 days!</h4>
+              </div>
+              <h3 class="mb-3">R$<%= @order.book.price %></h3>
+              <div class="container d-flex justify-content-center mt-5 w-70%">
+                <%= link_to "My orders", bought_books_path, class: "button pt-80 "  %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

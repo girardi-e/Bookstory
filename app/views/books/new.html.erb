@@ -3,11 +3,11 @@
 
   <div class="row">
     <div class="justify-content-center share__img">
-      <img src="../assets/slogan2.png" alt="" style=" width:100%;">
+      <%= image_tag "slogan2.png"%>
     </div>
 
     <div class="col">
-    
+
       <div class="formbg-outer">
         <h1 class="text-center mb-3">Sell your book</h1>
         <div class="formbg">
@@ -17,7 +17,7 @@
                 <%= f.input :title %>
                 <%= f.input :author %>
                 <%= f.input :description, as: :text %>
-                <%= f.input :price %> 
+                <%= f.input :price %>
                 <%= f.input :photo, as: :file %>
               </div>
 
@@ -32,8 +32,3 @@
   </div>
 </div>
 <%= render 'shared/footer' %>
-
-
-
-
-

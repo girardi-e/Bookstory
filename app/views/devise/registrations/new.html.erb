@@ -40,10 +40,10 @@
         <div class="formbg">
           <div class="formbg-inner padding-horizontal--48">
             <span class="padding-bottom--15">Sign Up</span>
-                
+
                 <%= simple_form_for(resource, as: resource_name, id: "stripe-login", url: registration_path(resource_name)) do |f| %>
                   <%= f.error_notification %>
-                    <div class="field padding-bottom--12">   
+                    <div class="field padding-bottom--12">
                       <%= f.input :first_name %>
                     </div>
 
@@ -73,6 +73,10 @@
                       <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
+                    </div>
+
+                    <div class="field padding-bottom--12">
+                      <%= f.input :photo, as: :file %>
                     </div>
 
                     <div class="field padding-bottom--12 margin-btn-login">

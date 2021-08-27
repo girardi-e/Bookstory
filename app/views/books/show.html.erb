@@ -1,7 +1,7 @@
 <div class="container my-5">
   <div class="row d-flex align-items-center">
 
-    <div class="col d-flex justify-content-center show_column">
+    <div class="col d-flex justify-content-center">
       <% if @book.photo.attached? %>
         <%= cl_image_tag @book.photo.key, height: 300, width: 400%>
       <% else %>
@@ -9,7 +9,7 @@
       <% end  %>
     </div>
 
-    <div class="col show_column">
+    <div class="col d-flex justify-content-center">
       <div class="formbg-outer">
         <div class="formbg">
           <div class="formbg-inner padding-horizontal--48">

@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'rest-client'
 require 'json'
-Book.destroy_all
+
 User.destroy_all
 ################# USERS SEED ###################
 puts 'Creating users ...'

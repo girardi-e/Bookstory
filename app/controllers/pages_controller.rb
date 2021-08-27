@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @books = Book.all.first(6)
+    @books = Book.all.last(6)
     @books_rand = Book.all.sample(3)
   end
 

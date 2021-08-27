@@ -1,10 +1,13 @@
+
 <div class="container my-5">
+
   <div class="row">
-    <div class="col d-flex justify-content-center share__img">
-        <img src="../assets/sellbook.png" alt="">
+    <div class="justify-content-center share__img" width="200%" height="100%">
+      <img src="../assets/sellbook.png" alt="">
     </div>
 
     <div class="col">
+
       <div class="formbg-outer">
         <h1 class="text-center mb-3">Sell your book</h1>
         <div class="formbg">
@@ -13,7 +16,7 @@
               <div class="field padding-bottom--12">
                 <%= f.input :title %>
                 <%= f.input :author %>
-                <%= f.input :description %>
+                <%= f.input :description, as: :text %>
                 <%= f.input :price %> 
                 <%= f.input :photo, as: :file %>
               </div>

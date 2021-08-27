@@ -1,19 +1,36 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-10 ">
+<div class="container my-5">
+  <div class="row">
+    <div class="col d-flex justify-content-center share__img">
+        <img src="../assets/sellbook.png" alt="">
+    </div>
 
-      <h1> SHARE A STORY WITH THE WORLD </h1>
+    <div class="col">
+      <div class="formbg-outer">
+        <h1 class="text-center mb-3">Sell your book</h1>
+        <div class="formbg">
+          <div class="formbg-inner padding-horizontal--48">
+            <%= simple_form_for [ @book ], id: "stripe-login" do |f| %>
+              <div class="field padding-bottom--12">
+                <%= f.input :title %>
+                <%= f.input :author %>
+                <%= f.input :description %>
+                <%= f.input :price %> 
+                <%= f.input :photo, as: :file %>
+              </div>
 
-      <%= simple_form_for [ @book ] do |f| %>
-        <%= f.input :title %>
-        <%= f.input :author %>
-        <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.input :photo, as: :file %>
-
-        <%= f.submit "Sell this book", class: "btn btn-primary" %>
-      <% end %>
-
+              <div class="buttons-containter d-flex justify-content-around mt-5">
+                <%= f.submit "Sell this book", class: "btn btn-alert" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<%= render 'shared/footer' %>
+
+
+
+
+

@@ -14,15 +14,12 @@
       <div class="formbg-outer">
         <div class="formbg">
           <div class="formbg-inner padding-horizontal--48">
-            <div class="info text-right">
-              <h1 class="pb-20 my-2"><%= @order.book.title %></h1>
-              <p class="mb-5"><em>Being sold by </em><strong><%="#{@order.user.first_name}"%></strong></p>
-              <p class="pb-20 my-3">"<%= @order.book.description %>"</p>
-              <%# <i class="fas fa-truck"></i> %>
-              <div class="order-ad">
-                <h4>Order it now and receive it in up to 3 days!</h4>
-              </div>
-              <h3 class="mb-3">R$<%= @order.book.price %></h3>
+            <div class="info text-center">
+              <h1>Your purchase was successfully completed!</h1> <br>
+              <h3><strong><%="#{@order.user.first_name}"%></strong>
+                is already preparing your order
+                and you should receive it soon.</h3><br>
+              <h5>Click on the button below to check the details of your purchase</h5>
               <div class="container d-flex justify-content-center mt-5 w-70%">
                 <%= link_to "My orders", bought_books_path, class: "button pt-80 "  %>
               </div>

@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController
 
   def show
-    authorize @order
     @order = Order.find(params[:id])
+    authorize @order
   end
 
   def create
+
     @order = Order.new
     @book = Book.find(params[:book_id])
     @order.book = @book
@@ -20,4 +21,5 @@ class OrdersController < ApplicationController
       redirect_to book_path(@book)
     end
   end
+
 end

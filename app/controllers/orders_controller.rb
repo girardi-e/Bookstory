@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
+
   def show
+    authorize @order
     @order = Order.find(params[:id])
   end
 
@@ -9,6 +11,9 @@ class OrdersController < ApplicationController
     @order.book = @book
     @order.user = current_user
     @order.date = Time.now
+
+    authorize @order
+
     if @order.save
       redirect_to order_path(@order)
     else

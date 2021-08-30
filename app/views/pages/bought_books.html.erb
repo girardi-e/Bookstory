@@ -9,15 +9,19 @@
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Price</th>
+            <th scope="col">Seller</th>
+            <th scope="col">Date</th>
           </tr>
         </thead>
 
         <% @new_array.each do |order| %>
           <tbody>
             <tr>
-              <td><%= link_to "#{order.book.title}", book_path(order.book) %></td>
+              <td><%= order.book.title %></td>
               <td><%= order.book.author %></td>
               <td><%= "R$#{order.book.price}" %></td>
+              <td><%= order.book.user.first_name %></td>
+              <td><%= order.date%></td>
             </tr>
           </tbody>
         <% end %>

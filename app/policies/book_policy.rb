@@ -1,9 +1,8 @@
 class BookPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      # scope ==> class
+      # user.admin? ? scope.all : scope.where(user: user)
       scope.all
-      # scope.where(user: user)
     end
   end
 
@@ -26,20 +25,20 @@ class BookPolicy < ApplicationPolicy
   # user ==> current_user
   # record_id ==> model
   def edit?
-    owner?
+    owner_or_admin?
   end
 
   def update?
-    owner?
+    owner_or_admin?
   end
 
   def destroy?
-    owner?
+    owner_or_admin?
   end
 
   private
 
-  def owner?
-    record.user == user
+  def owner_or_admin?
+    record.user == user || user.admin
   end
 end

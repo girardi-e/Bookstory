@@ -26,8 +26,11 @@
               </div>
               <div class="buttons-containter d-flex justify-content-around mt-5">
                 <%= f.submit "Update book", class: "btn" %>
-                <%= link_to "Delete book", book_path(@book), method: :delete,
-                  data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+                <% if policy(@book).destroy? %>
+                  <%= link_to "Delete book", book_path(@book), method: :delete,
+                    data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+                <% end %>
               </div>
             <% end %>
           </div>
